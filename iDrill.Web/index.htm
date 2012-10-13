@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>iDrill</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div data-role="page" id="pageOne">
+        <div data-role="header">
+            <h1>
+                iDrill
+            </h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body ui-body-a">
+            <form action="#" method="get">
+            <div data-role="fieldcontain">
+                <label for="txtWallWidth">Wandstärke in cm</label>
+                <input type="text" id="txtWallWidth" data-bind="value: wallWidth" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="txtHeightDifference">Höheunterschied (cm)</label>
+                <input type="text" id="txtHeightDifference" data-bind="value: heightDifference" />
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <label for="txtAngle">Winkel</label>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="txtAngle" data-bind="value: angle" readonly="readonly" />
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <label for="txtAngle">Bohrlänge</label>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="txtDrillLength" data-bind="value: drillLength" readonly="readonly" />
+                </div>
+            </div>
+            </form>
+        </div>
+        <footer data-role="footer" class="ui-body-a" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageOne">First</a></li>
+                    <li><a href="#pageTwo">Second</a></li>
+                    <li><a href="#pageThree">Third</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="pageTwo">
+        <div data-role="header">
+            <h1>
+                Second page</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body ui-body-a">
+            <form action="#" method="get">
+            <div data-role="fieldcontain" class="ui-grid-a">
+                <div class="ui-block-a">
+                    <label for="name">
+                        Your Name:</label>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" name="name" id="Text1" value="" />
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="name">
+                    Your Name:</label>
+                <input type="text" name="name" id="Text2" value="" />
+            </div>
+            <fieldset class="ui-grid-b">
+                <div class="ui-block-a">
+                    Text
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" name="aa" id="Text4" value="" />
+                </div>
+                <div class="ui-block-b">
+                    <button type="submit" data-theme="b">
+                        vormerken</button>
+                </div>
+            </fieldset>
+            </form>
+        </div>
+        <footer data-role="footer" class="ui-body-a" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageOne">First</a></li>
+                    <li><a href="#pageTwo">Second</a></li>
+                    <li><a href="#pageThree">Third</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="pageThree">
+        <div data-role="header">
+            <h1>
+                Third page</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body-a">
+            <div class="ui-grid-a">
+                <div class="ui-block-b">
+                    <label for="bbb">
+                        My label and some more text here</label>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" name="bbb" id="Text3" value="" />
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-body-a" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageOne">First</a></li>
+                    <li><a href="#pageTwo">Second</a></li>
+                    <li><a href="#pageThree">Third</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="Scripts/lib/jquery-1.8.2.js" type="text/javascript"></script>
+<script src="Scripts/lib/knockout-2.1.0.js" type="text/javascript"></script>
+<script src="Scripts/lib/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+<script src="Scripts/lib/require.js" type="text/javascript"></script>
+<script src="Scripts/app/iDrillVm.js" type="text/javascript"></script>
+<script src="Scripts/main.js" type="text/javascript"></script>
+</html>
