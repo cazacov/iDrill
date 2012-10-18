@@ -1,135 +1,196 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html manifest="idrill.appcache">
 <head>
     <title>iDrill</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-iphone4.png" />
+    <!-- iPhone -->
+    <link href="startup.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    <!-- iPhone (Retina) -->
+    <link href="startuphd.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+    <link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css" />
     <link href="Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div data-role="page" id="pageOne">
+    <div data-role="page" id="pagePlan" data-theme="a">
         <div data-role="header">
             <h1>
                 iDrill
             </h1>
         </div>
         <!-- /header -->
-        <div data-role="content" class="ui-body ui-body-a">
-            <form action="#" method="get">
-            <div data-role="fieldcontain">
-                <label for="txtWallWidth">Wandstärke in cm</label>
-                <input type="text" id="txtWallWidth" data-bind="value: wallWidth" />
-            </div>
-            <div data-role="fieldcontain">
-                <label for="txtHeightDifference">Höheunterschied (cm)</label>
-                <input type="text" id="txtHeightDifference" data-bind="value: heightDifference" />
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <label for="txtAngle">Winkel</label>
-                </div>
-                <div class="ui-block-b">
-                    <input type="text" id="txtAngle" data-bind="value: angle" readonly="readonly" />
-                </div>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <label for="txtAngle">Bohrlänge</label>
-                </div>
-                <div class="ui-block-b">
-                    <input type="text" id="txtDrillLength" data-bind="value: drillLength" readonly="readonly" />
-                </div>
-            </div>
-            </form>
+        <div data-role="content" class="ui-body-a">
+            <img src="Content/images/Plan.png" width="300px" height="300px" />
         </div>
-        <footer data-role="footer" class="ui-body-a" data-position="fixed">
-            <div data-role="navbar">
+        <footer data-role="footer" class="ui-body-a" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" class="mynavbar">
                 <ul>
-                    <li><a href="#pageOne">First</a></li>
-                    <li><a href="#pageTwo">Second</a></li>
-                    <li><a href="#pageThree">Third</a></li>
+                    <li><a href="#pagePlan" data-icon="plan" class="ui-btn-active ui-state-persist">Plan</a></li>
+                    <li><a href="#pageData" data-icon="data" data-transition="slide">Daten</a></li>
+                    <li><a href="#pageCalc" data-icon="calc" data-transition="slide">Rechnen</a></li>
+                    <li><a href="#pageDrill" data-icon="drill" data-transition="slide">Kontrole</a></li>
                 </ul>
             </div>
         </footer>
     </div>
-    <div data-role="page" id="pageTwo">
+    <div data-role="page" id="pageData" data-theme="a">
         <div data-role="header">
             <h1>
-                Second page</h1>
-        </div>
-        <!-- /header -->
-        <div data-role="content" class="ui-body ui-body-a">
-            <form action="#" method="get">
-            <div data-role="fieldcontain" class="ui-grid-a">
-                <div class="ui-block-a">
-                    <label for="name">
-                        Your Name:</label>
-                </div>
-                <div class="ui-block-b">
-                    <input type="text" name="name" id="Text1" value="" />
-                </div>
-            </div>
-            <div data-role="fieldcontain">
-                <label for="name">
-                    Your Name:</label>
-                <input type="text" name="name" id="Text2" value="" />
-            </div>
-            <fieldset class="ui-grid-b">
-                <div class="ui-block-a">
-                    Text
-                </div>
-                <div class="ui-block-b">
-                    <input type="text" name="aa" id="Text4" value="" />
-                </div>
-                <div class="ui-block-b">
-                    <button type="submit" data-theme="b">
-                        vormerken</button>
-                </div>
-            </fieldset>
-            </form>
-        </div>
-        <footer data-role="footer" class="ui-body-a" data-position="fixed">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#pageOne">First</a></li>
-                    <li><a href="#pageTwo">Second</a></li>
-                    <li><a href="#pageThree">Third</a></li>
-                </ul>
-            </div>
-        </footer>
-    </div>
-    <div data-role="page" id="pageThree">
-        <div data-role="header">
-            <h1>
-                Third page</h1>
+                iDrill
+            </h1>
         </div>
         <!-- /header -->
         <div data-role="content" class="ui-body-a">
-            <div class="ui-grid-a">
-                <div class="ui-block-b">
-                    <label for="bbb">
-                        My label and some more text here</label>
+            <form action="#" method="get">
+            <div data-role="fieldcontain">
+                <label for="txtWallWidth">
+                    Wandstärke in cm</label>
+                <input type="text" id="txtWallWidth" pattern="[0-9]*" data-bind="value: wallWidth" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="txtHeightDifference">
+                    Höheunterschied in cm</label>
+                <input type="text" id="txtHeightDifference" pattern="[0-9]*" data-bind="value: heightDifference" />
+            </div>
+            <table class="result">
+                <tr class="resultRow">
+                    <td class="resultLabel">
+                        Winkel (°)
+                    </td>
+                    <td data-bind="attr: { class: resultClass}">
+                        <span data-bind="text: displayAngle"></span>
+                    </td>
+                </tr>
+                <tr class="resultRow">
+                    <td class="resultLabel">
+                        Bohrlänge (cm)
+                    </td>
+                    <td data-bind="attr: { class: resultClass}">
+                        <span data-bind="text: displayLength"></span>
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        <footer data-role="footer" class="ui-body-a" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" class="mynavbar">
+                <ul>
+                    <li><a href="#pagePlan" data-icon="plan" data-transition="slide">Plan</a></li>
+                    <li><a href="#pageData" data-icon="data" class="ui-btn-active ui-state-persist">Daten</a></li>
+                    <li><a href="#pageCalc" data-icon="calc" data-transition="slide">Rechnen</a></li>
+                    <li><a href="#pageDrill" data-icon="drill" data-transition="slide">Kontrole</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="pageCalc">
+        <div data-role="header">
+            <h1>
+                iDrill
+            </h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body-a">
+            <form action="#" method="get">
+            <div data-role="fieldcontain">
+                <label for="txtDistanceToWall">
+                    Entfernung vom Eintritt zur Hohenermittlung der Bohrsäule in cm</label>
+                <input type="text" id="txtDistanceToWall" pattern="[0-9]*" data-bind="value: distanceToWall" />
+            </div>
+            <table class="result">
+                <tr class="resultRow">
+                    <td class="resultLabel">
+                        Höhe der Säule (cm)
+                    </td>
+                    <td data-bind="attr: { class: resultClass}">
+                        <span data-bind="text: displayPointHeight"></span>
+                    </td>
+                </tr>
+                <tr class="resultRow">
+                    <td class="resultLabel">
+                        Winkel (°)
+                    </td>
+                    <td data-bind="attr: { class: resultClass}">
+                        <span data-bind="text: displayAngle"></span>
+                    </td>
+                </tr>
+                <tr class="resultRow">
+                    <td class="resultLabel">
+                        Bohrlänge (cm)
+                    </td>
+                    <td data-bind="attr: { class: resultClass}">
+                        <span data-bind="text: displayLength"></span>
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        <footer data-role="footer" class="ui-body-a" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" class="mynavbar">
+                <ul>
+                    <li><a href="#pagePlan" data-icon="plan" data-transition="slide">Plan</a></li>
+                    <li><a href="#pageData" data-icon="data" data-transition="slide">Daten</a></li>
+                    <li><a href="#pageCalc" data-icon="calc" class="ui-btn-active ui-state-persist">Rechnen</a></li>
+                    <li><a href="#pageDrill" data-icon="drill" data-transition="slide">Kontrole</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="pageDrill">
+        <div data-role="header">
+            <h1>
+                iDrill
+            </h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body-a fillPage">
+                <div class="nodata" data-bind="style: { display: resultOk() ? 'none' : 'table-cell'}">
+                    Keine Daten    
                 </div>
-                <div class="ui-block-b">
-                    <input type="text" name="bbb" id="Text3" value="" />
+            
+
+            <div id="level" class="levelContainer" data-bind="style: { display: resultOk() ? 'inherit' : 'none'}">
+                
+
+                <div class="level" data-bind="style: {'-webkit-transform': cssTiltAngle}" style="margin-top: -78px;">
+                </div>
+                
+                <div class="level" style="-khtml-opacity: 1.00; -webkit-transform: rotate(-90deg);margin-left: -135px; margin-top: -92px;">
+                </div>
+                <div class="levelLegend"> 
+                    <table class="result">
+                        <tbody>
+                            <tr class="currentAngleRow">
+                                <td >
+                                    <span class="angleLabel">Soll</span>
+                                    <span class="angleValue"><span data-bind="text: displayAngle"></span>°</span>
+                                </td>
+                                <td data-bind="css: {angleMatch: angleOk()}">
+                                    Ist <span class="angleValue"><span data-bind="text: displayTiltAngle"></span>°</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <footer data-role="footer" class="ui-body-a" data-position="fixed">
-            <div data-role="navbar">
+        <footer data-role="footer" class="ui-body-a" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" class="mynavbar">
                 <ul>
-                    <li><a href="#pageOne">First</a></li>
-                    <li><a href="#pageTwo">Second</a></li>
-                    <li><a href="#pageThree">Third</a></li>
+                    <li><a href="#pagePlan" data-icon="plan" data-transition="slide">Plan</a></li>
+                    <li><a href="#pageData" data-icon="data" data-transition="slide">Daten</a></li>
+                    <li><a href="#pageCalc" data-icon="calc" data-transition="slide">Rechnen</a></li>
+                    <li><a href="#pageDrill" data-icon="drill" class="ui-btn-active ui-state-persist">Kontrole</a></li>
                 </ul>
             </div>
         </footer>
     </div>
 </body>
-<script src="Scripts/lib/jquery-1.8.2.js" type="text/javascript"></script>
-<script src="Scripts/lib/knockout-2.1.0.js" type="text/javascript"></script>
-<script src="Scripts/lib/jquery.mobile-1.2.0.js" type="text/javascript"></script>
-<script src="Scripts/lib/require.js" type="text/javascript"></script>
-<script src="Scripts/app/iDrillVm.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.1.0.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
 <script src="Scripts/main.js" type="text/javascript"></script>
 </html>

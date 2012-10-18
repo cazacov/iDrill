@@ -1,0 +1,35 @@
+﻿CACHE MANIFEST
+#version 1.0 10-17-2012
+
+#internal HTML documents
+index.htm
+
+#images
+Content/images/Plan.png
+startup.png
+startuphd.png
+apple-touch-icon-iphone.png
+apple-touch-icon-iphone4.png
+
+#style sheets
+Content/Site.css
+http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css
+
+#style sheet images
+images/ajax-loader.gif
+images/borer.png
+images/ico-calc.png
+images/ico-data.png
+images/ico-drill.png
+images/ico-plan.png
+images/icons-18-black.png
+images/icons-18-white.png
+
+#javascript files
+http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js
+http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.1.0.js
+http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js
+Scripts/main.js
+
+NETWORK:
+*

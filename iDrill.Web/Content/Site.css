@@ -1,2 +1,142 @@
-﻿body {
+﻿body 
+{
+    background-color: black;
+}
+
+table.result {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+tr.resultRow {
+    vertical-align: middle;
+    height: 40px;
+}
+
+td.resultLabel {
+    font-weight: bold;
+    width: 30%;
+}
+
+td.resultValue 
+{
+    text-align: center;
+    font-size: 300%;
+    width: 70%;
+}
+
+.result-ok {
+    color: lightgreen;
+}
+
+.result-warn {
+    color: yellow;
+}
+
+.result-undefined {
+    color: lightgray;
+}
+
+.mynavbar .ui-btn .ui-btn-inner {
+    padding-top: 40px !important; 
+}
+
+.mynavbar .ui-btn .ui-icon { 
+    width: 36px!important; 
+    height: 36px!important; 
+    margin-left: -18px !important; 
+    box-shadow: none!important; 
+    -moz-box-shadow: none!important; 
+    -webkit-box-shadow: none!important;
+/*      
+    -webkit-border-radius: none !important;
+    border-radius: none !important; 
+*/
+}
+
+.ui-icon-plan { 
+    background-image: url(images/ico-plan.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-data { 
+    background-image: url(images/ico-data.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-calc { 
+    background-image: url(images/ico-calc.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-drill { 
+    background-image: url(images/ico-drill.png);
+    background-repeat: no-repeat;
+}
+
+
+.switchcontainer .ui-slider-switch { width: 14em }
+
+.fillPage {
+    height: 320px;
+}
+
+
+.levelContainer {
+    top: 50px;
+    width: 290px;
+    height: 340px;
+    position: absolute;
+}
+
+.level {
+    width: 270px;
+    height: 92px;
+    background: url('images/borer.png') no-repeat;
+    -webkit-background-size: 100% 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -135px;
+    -webkit-transform: rotate(20deg);
+    -webkit-transform-origin: 50% 50%;
+    -khtml-opacity: 0.60;
+}
+
+.levelLegend {
+    position: absolute; 
+    bottom: -15px; 
+    width: 100%;
+}
+
+.currentAngleRow {
+    text-align: center;
+    vertical-align: middle;
+}
+
+span.angleValue {
+     font-size: 250%;
+}
+
+span.label {
+}
+
+td.angleMatch {
+    border-color: lightgreen;
+    border-width: 5px;
+    border-style: solid;
+    background-color: green;
+}
+
+.nodata {
+    text-align: center; 
+    vertical-align: middle; 
+    height: 300px; 
+    width: 280px; 
+    font-size: 300%
+}
+
+.ui-icon {
+    background-color: inherit;
 }

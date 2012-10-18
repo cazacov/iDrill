@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>idrill.appcache</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -51,18 +54,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apple-touch-icon-iphone.png" />
+    <Content Include="apple-touch-icon-iphone4.png" />
     <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\borer.png" />
+    <Content Include="Content\images\ico-calc.png" />
+    <Content Include="Content\images\ico-data.png" />
+    <Content Include="Content\images\ico-drill.png" />
+    <Content Include="Content\images\ico-plan.png" />
     <Content Include="Content\images\icons-18-black.png" />
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\Plan.png" />
     <Content Include="Content\jquery.mobile-1.2.0.css" />
     <Content Include="Content\jquery.mobile-1.2.0.min.css" />
-    <Content Include="Content\jquery.mobile.theme-1.2.0.css" />
-    <Content Include="Content\jquery.mobile.theme-1.2.0.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="index.htm" />
-    <Content Include="Scripts\app\iDrillVm.js" />
     <Content Include="Scripts\lib\jquery-1.8.2-vsdoc.js" />
     <Content Include="Scripts\lib\jquery-1.8.2.js" />
     <Content Include="Scripts\lib\jquery-1.8.2.min.js" />
@@ -70,21 +78,22 @@
     <Content Include="Scripts\lib\jquery.mobile-1.2.0.min.js" />
     <Content Include="Scripts\lib\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\lib\knockout-2.1.0.js" />
-    <Content Include="Scripts\lib\require.js" />
     <Content Include="Scripts\main.js" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
+    <Content Include="startup.png" />
+    <Content Include="startuphd.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\app\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".htaccess" />
+    <Content Include="idrill.appcache" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
