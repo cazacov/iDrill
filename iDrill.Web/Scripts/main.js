@@ -30,16 +30,16 @@ $(function () {
             }
         },
         calculateAngle = function() {
-            var angle = undefined,
+                var angle = undefined,
                 drillLength = undefined,
                 pointHeight = undefined;
 
-            if (wallWidth() <= 0 || wallWidth() >= 1000) {
+            if (wallWidth() == undefined || wallWidth() <= 0 || wallWidth() >= 1000) {
                 angle = undefined;
                 drillLength = undefined;
                 pointHeight = undefined;
                 resultOk(false);
-            } else if (Math.abs(heightDifference()) > 1000) {
+            } else if (heightDifference() == undefined || heightDifference() == "" || Math.abs(heightDifference()) > 1000) {
                 angle = undefined;
                 drillLength = undefined;
                 pointHeight = undefined;
@@ -51,11 +51,9 @@ $(function () {
                 if (distanceToWall() < 5) {
                     distanceToWall(5);
                 }
-                pointHeight = distanceToWall() * Math.tan(angle);
+                pointHeight = Math.tan(angle) * distanceToWall();
                 resultOk(true);
             }
-
-
             if (drillLength == undefined) {
                 displayLength("???");
             } else {
@@ -69,7 +67,7 @@ $(function () {
             if (pointHeight == undefined) {
                 displayPointHeight("???");
             } else {
-                displayPointHeight((Math.round(pointHeight * 10) / 10));
+                displayPointHeight(Math.round(pointHeight * 10) / 10.0);
             }
 
             if (resultOk()) {
@@ -81,7 +79,7 @@ $(function () {
         deviceOrientationHandler = function(eventData) {
             var d = eventData.beta;
             
-            if (eventData.gamma > 0) {
+            if (eventData.gamma > 0) { // iPhone is rotated clocwise
                 d = 180 - d;
             }
 

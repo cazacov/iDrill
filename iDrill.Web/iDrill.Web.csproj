@@ -88,9 +88,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\app\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include=".htaccess" />
     <Content Include="idrill.appcache" />
