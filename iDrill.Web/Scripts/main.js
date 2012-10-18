@@ -16,6 +16,7 @@ $(function () {
             cssTiltAngle = ko.observable("rotate(0deg)"),
             resultOk = ko.observable(false),
             angleOk = ko.observable(false),
+            
             // functions
         run = function() {
             ko.applyBindings(iDrill.viewModel);
@@ -29,6 +30,7 @@ $(function () {
                 window.addEventListener("deviceorientation", deviceOrientationHandler);
             }
         },
+            
         calculateAngle = function() {
                 var angle = undefined,
                 drillLength = undefined,
@@ -76,6 +78,7 @@ $(function () {
                 resultClass("resultValue result-undefined");
             }
         },
+            
         deviceOrientationHandler = function(eventData) {
             var d = eventData.beta;
             
@@ -114,14 +117,18 @@ $(function () {
             // Höhe der Säule
             displayPointHeight: displayPointHeight,
 
+            // CSS-Klass für Result-Grid
             resultClass: resultClass,
+            
+            // CSS Rotation-Winkel
+            cssTiltAngle: cssTiltAngle,
             
             displayTiltAngle: displayTiltAngle,
             
-            cssTiltAngle: cssTiltAngle,
-            
+            // Result ist Ok
             resultOk : resultOk,
-            
+
+            // Soll- und ist-Winkel sind gleich (+/- Toleranz)            
             angleOk: angleOk,
 
             // Funktionen
